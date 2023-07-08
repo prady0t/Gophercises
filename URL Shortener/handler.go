@@ -18,7 +18,7 @@ func MapHandler(pathsToUrls map[string]string, fallback http.Handler) http.Handl
 		url := r.URL.Path
 		for link, redirect := range (pathsToUrls){
         if link == url{
-			http.Redirect(w, r, redirect, 1)
+			http.Redirect(w, r, redirect, http.StatusFound)
 			return
 		}
 		}	
@@ -45,5 +45,6 @@ func MapHandler(pathsToUrls map[string]string, fallback http.Handler) http.Handl
 // a mapping of paths to urls.
 func YAMLHandler(yml []byte, fallback http.Handler) (http.HandlerFunc, error) {
 	// TODO: Implement this...
+
 	return nil, nil
 }

@@ -1,1 +1,1 @@
-/urlshort-godoc
+a ...any
